@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "b0ae6f09-057f-43ca-981c-e1191eff1ebe",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38514256"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Pamela Ramírez\",\r\n    \"email\": \"Pamela.ramirez@example.com\",\r\n    \"edad\": 25,\r\n    \"direcciones\": [\r\n      {\r\n        \"calle\": \"Rua 12\",\r\n        \"ciudad\": \"São Paulo\",\r\n        \"pais\": \"Brasil\",\r\n        \"codigo_postal\": \"01000-000\"\r\n      },\r\n      {\r\n        \"calle\": \"Rua 12\",\r\n        \"ciudad\": \"Buenos Aires\",\r\n        \"pais\": \"Argentina\",\r\n        \"codigo_postal\": \"01000-2222\"\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Ruta para crear un usuario."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"María González\",\r\n    \"email\": \"maria.gonzalez@example.com\",\r\n    \"edad\": 32,\r\n    \"direcciones\": [\r\n      {\r\n        \"calle\": \"Calle 45\",\r\n        \"ciudad\": \"Buenos Aires\",\r\n        \"pais\": \"Argentina\",\r\n        \"codigo_postal\": \"C1001\"\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								""
+							]
+						},
+						"description": "Ruta para obtener un usuario mediante su id (Generado por Mongodb)"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuarios",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						},
+						"description": "Ruta para obtener todos los usuarios registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Juan Pérez Reyes\",\r\n        \"email\": \"juan.perezz@example.com\",\r\n        \"edad\": 28,\r\n        \"direcciones\": [\r\n            {\r\n                \"calle\": \"Av. Principal 2\",\r\n                \"ciudad\": \"Lima\",\r\n                \"pais\": \"Perú\",\r\n                \"codigo_postal\": \"15001\",\r\n                \"_id\": \"67d8f3da3190cf8179ddca76\"\r\n            }\r\n        ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/67d8f3da3190cf8179ddca75",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"67d8f3da3190cf8179ddca75"
+							]
+						},
+						"description": "Ruta para editar un usuario mediante su id (Generado por Mongodb)"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/67d8f3da3190cf8179ddca75",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"67d8f3da3190cf8179ddca75"
+							]
+						},
+						"description": "Ruta para eleminar un usuario mediante su id (Generado por Mongodb)"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario Con Ciudad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Error Message</th>\r",
+									"    </tr>\r",
+									"    <tr>\r",
+									"        <td>{{response.error}}</td>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/buscar?ciudad=Buenos Aires",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "ciudad",
+									"value": "Buenos Aires"
+								}
+							]
+						},
+						"description": "Ruta para obtener usuarios que tengan una ciudad en común."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta carpeta contiene las rutas con la cual se puede interactuar con la API para interactuar con los endpoints del usuario."
+		}
+	]
+}
