@@ -75,12 +75,13 @@ npm run dev
 ---
 
 ### 🛠 Endpoints Disponibles  
-#### 🔹 Usuarios (`/api/users`)
+#### 🔹 Usuarios (`/api/usuarios`)
 | Método   | Endpoint  | Descripción                  |
 |----------|-----------|------------------------------|
-| **POST**   | `/create`   | Crea un nuevo usuario     |
-| **GET**    | `/list`     | Lista todos los usuarios  |
+| **POST**   | `/`         | Crea un nuevo usuario     |
+| **GET**    | `/`         | Lista todos los usuarios  |
 | **GET**    | `/:id`      | Obtiene un usuario por ID |
+| **GET**    | `/buscar`   | Obtiene usuarios por Ciudad |
 | **PUT**    | `/:id`      | Actualiza un usuario por ID |
 | **DELETE** | `/:id`      | Elimina un usuario por ID |
 
