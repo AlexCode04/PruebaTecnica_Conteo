@@ -1,5 +1,5 @@
 import User from '../Models/User.js';
-
+import paginateOptions from '../Utils/paginateOptions.js';
 /*
  
 Se crea un controlador para el usuario, el cual se encarga de manejar las peticiones que se hagan a la base de datos
@@ -9,14 +9,13 @@ y el controlador solo se encarga de manejar las peticiones y respuestas.
 */
 
 class ControllerUser {
-
     async getUsers(req, res) {
         try {
-            let users = await User.find();
+            let users = await User.paginate({}, { page: req.query.page || paginateOptions.page, limit: req.query.limit || paginateOptions.limit });
             res.status(200).json(users);
         } catch (error) {
             res.status(500).json({ error: error.message });
-        }
+        }   
     }
 
     async getUserById(req, res) {
@@ -56,9 +55,9 @@ class ControllerUser {
         }
     }
 
-    async searchUserByCity(req, res) {
+    async searchUserByCity(req, res) {  
         try {
-            let users = await User.find({ 'direcciones.ciudad': req.query.ciudad });
+            let users = await User.paginate({ 'direcciones.ciudad': req.params.city }, { page: req.query.page || paginateOptions.page, limit: req.query.limit || paginateOptions.limit });
             res.status(200).json(users);
         } catch (error) {
             res.status(500).json({ error: error.message });

@@ -80,98 +80,6 @@
 					"response": []
 				},
 				{
-					"name": "Obtener Usuarios",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/usuarios",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"usuarios"
-							]
-						},
-						"description": "Ruta para obtener todos los usuarios registrados"
-					},
-					"response": []
-				},
-				{
-					"name": "Editar Usuario",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Juan Pérez Reyes\",\r\n        \"email\": \"juan.perezz@example.com\",\r\n        \"edad\": 28,\r\n        \"direcciones\": [\r\n            {\r\n                \"calle\": \"Av. Principal 2\",\r\n                \"ciudad\": \"Lima\",\r\n                \"pais\": \"Perú\",\r\n                \"codigo_postal\": \"15001\",\r\n                \"_id\": \"67d8f3da3190cf8179ddca76\"\r\n            }\r\n        ]\r\n  }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/usuarios/67d8f3da3190cf8179ddca75",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"usuarios",
-								"67d8f3da3190cf8179ddca75"
-							]
-						},
-						"description": "Ruta para editar un usuario mediante su id (Generado por Mongodb)"
-					},
-					"response": []
-				},
-				{
-					"name": "Eliminar Usuario",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/usuarios/67d8f3da3190cf8179ddca75",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"usuarios",
-								"67d8f3da3190cf8179ddca75"
-							]
-						},
-						"description": "Ruta para eleminar un usuario mediante su id (Generado por Mongodb)"
-					},
-					"response": []
-				},
-				{
 					"name": "Obtener Usuario Con Ciudad",
 					"event": [
 						{
@@ -246,6 +154,108 @@
 							]
 						},
 						"description": "Ruta para obtener usuarios que tengan una ciudad en común."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuarios",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios?page=2&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Ruta para obtener todos los usuarios registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Juan Pérez Reyes\",\r\n        \"email\": \"juan.perezz@example.com\",\r\n        \"edad\": 28,\r\n        \"direcciones\": [\r\n            {\r\n                \"calle\": \"Av. Principal 2\",\r\n                \"ciudad\": \"Lima\",\r\n                \"pais\": \"Perú\",\r\n                \"codigo_postal\": \"15001\",\r\n                \"_id\": \"67d8f3da3190cf8179ddca76\"\r\n            }\r\n        ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/67d8f3da3190cf8179ddca75",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"67d8f3da3190cf8179ddca75"
+							]
+						},
+						"description": "Ruta para editar un usuario mediante su id (Generado por Mongodb)"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/67d8f3da3190cf8179ddca75",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"67d8f3da3190cf8179ddca75"
+							]
+						},
+						"description": "Ruta para eleminar un usuario mediante su id (Generado por Mongodb)"
 					},
 					"response": []
 				}

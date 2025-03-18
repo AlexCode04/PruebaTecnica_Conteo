@@ -1,5 +1,6 @@
 import { Schema, model } from 'mongoose';
 import directionSchema from './Direction.js';
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 /**
     Se uso un schema para el usuario, ya que este schema se va a guardar en la base de datos,
@@ -33,7 +34,8 @@ const userSchema = new Schema({
     }
 });
 
-
+userSchema.plugin(mongoosePaginate);
 const user = model('User', userSchema);
+
 
 export default user;

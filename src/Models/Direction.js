@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-
+import mongoosePaginate from 'mongoose-paginate-v2';
 /**
  Se uso un schema para la dirección, ya que se puede reutilizar en otros modelos.
  y para aumentar la legibilidad del código y la escalabilidad del proyecto.
@@ -13,4 +13,5 @@ const directionSchema = new Schema({
     codigo_postal: { type: String, required: true }
 });
 
+directionSchema.plugin(mongoosePaginate);
 export default directionSchema;
